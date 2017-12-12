@@ -1,10 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Button,
-        Form,
-        TextArea,
-        Input } from 'semantic-ui-react';
-
+import { Button, Form, TextArea, Input } from 'semantic-ui-react';
+import { addBlog } from '../actions/addBlog';
+import { incId } from '../actions/incId';
 
 class BlogForm extends React.Component {
   state = { name: '', body: '' };
@@ -30,8 +28,12 @@ class BlogForm extends React.Component {
     return(
     <Form onSubmit={this.handleSubmit}>
       <Form.Group>
-        <Form.Field name='name' value={this.state.name} control={Input}  />
-        <Form.Field name='body' value={this.state.body} control={TextArea}  />
+        <Form.Field name='name' value={this.state.name} control={Input}
+        placeholder="Name" onChange={this.handleChange}
+        />
+        <Form.Field name='body' value={this.state.body} control={TextArea}
+        placeholder="Body" onChange={this.handleChange}
+        />
       </Form.Group>
       <Button onSubmit={this.handleSubmit}>Submit</Button>
     </Form>

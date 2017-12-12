@@ -7,7 +7,7 @@ import BlogList from './components/BlogList';
 const App = () => (
   <Segment>
     <Navbar />
-    <BlogForm />  
+    <BlogForm />
     <BlogList />
   </Segment>
 )
