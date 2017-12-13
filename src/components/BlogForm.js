@@ -27,11 +27,18 @@ class BlogForm extends React.Component {
   render() {
     return(
     <Form onSubmit={this.handleSubmit}>
-      <Form.Field name='name' value={this.state.name} control={Input}
-      placeholder="Name" onChange={this.handleChange}
+      <Form.Field
+        name='name'
+        value={this.state.name}
+        required
+        control={Input}
+        placeholder="Name"
+        onChange={this.handleChange}
       />
-      <TextArea name='body' value={this.state.body} control={TextArea}
-      placeholder="Body" onChange={this.handleChange}
+      <TextArea name='body'
+      value={this.state.body}
+      placeholder="Body"
+      onChange={this.handleChange}
       />
       <Button onSubmit={this.handleSubmit}>Submit</Button>
     </Form>

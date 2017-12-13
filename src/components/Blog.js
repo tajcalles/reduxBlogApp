@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { List, Button } from 'semantic-ui-react';
 import { deleteBlog } from '../actions/deleteBlog';
-import { editBlog } from '../actions/editBlog';
+import { editBlog } from '../actions/addBlog';
 import blogs from '../actions/addBlog';
 
 class Blog extends React.Component {
@@ -39,12 +39,11 @@ class Blog extends React.Component {
     } else {
       return (
         <List.Item>
-            {name}
-
-            {body}
-            <Button onClick={()=> dispatch(editBlog(id)) }>Edit</Button>
-            <Button negative onClick={()=> dispatch(deleteBlog()) }>Delete</Button>
-            <Button primary onClick={()=> this.toggleForm()}>Delete</Button>
+          {name}
+          {body}
+          <Button onClick={()=> dispatch(editBlog(id)) }>Edit</Button>
+          <Button negative onClick={()=> dispatch(deleteBlog()) }>Delete</Button>
+          <Button orange onClick={()=> this.toggleForm()}>Hide This Content</Button>
         </List.Item>
       )
     }
